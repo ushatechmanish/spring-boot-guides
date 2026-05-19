@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,11 @@ public class RelationalDataAccess4Application  implements CommandLineRunner {
 
     public static void main(String[] args) {
         SpringApplication.run(RelationalDataAccess4Application.class, args);
+    }
+
+    @GetMapping("/greeting")
+    public String greeting() {
+        return "Hello World";
     }
 
     @Override
